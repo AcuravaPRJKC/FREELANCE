@@ -1,14 +1,14 @@
-// Firebase SDK: Подключение необходимых модулей
+// Firebase SDK
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-// Firebase Configuration
+// Firebase конфигурация
 const firebaseConfig = {
     apiKey: "AIzaSyBlP0Zp94TEy-ueM3Mg1R9c79fL_dUq0k4",
     authDomain: "freelance-1e3b3.firebaseapp.com",
     projectId: "freelance-1e3b3",
-    storageBucket: "freelance-1e3b3.firebasestorage.app",
+    storageBucket: "freelance-1e3b3.appspot.com",
     messagingSenderId: "700770747092",
     appId: "1:700770747092:web:d8880c19dcae42ffd6f141",
     measurementId: "G-GD4PN89P0C"
@@ -26,10 +26,10 @@ document.getElementById("register-form").addEventListener("submit", async (event
     const password = document.getElementById("register-password").value;
 
     try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        await createUserWithEmailAndPassword(auth, email, password);
         alert("Регистрация прошла успешно!");
     } catch (error) {
-        alert(`Ошибка при регистрации: ${error.message}`);
+        alert(`Ошибка: ${error.message}`);
     }
 });
 
@@ -40,21 +40,23 @@ document.getElementById("login-form").addEventListener("submit", async (event) =
     const password = document.getElementById("login-password").value;
 
     try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        await signInWithEmailAndPassword(auth, email, password);
         alert("Вы успешно вошли!");
+        document.getElementById("logout-button").style.display = "block";
         loadProfiles(); // Загрузка профилей после входа
     } catch (error) {
-        alert(`Ошибка при входе: ${error.message}`);
+        alert(`Ошибка: ${error.message}`);
     }
 });
 
 // Выход пользователя
-document.getElementById("logout-button")?.addEventListener("click", async () => {
+document.getElementById("logout-button").addEventListener("click", async () => {
     try {
         await signOut(auth);
-        alert("Вы успешно вышли из системы.");
+        alert("Вы вышли из системы.");
+        document.getElementById("logout-button").style.display = "none";
     } catch (error) {
-        alert(`Ошибка при выходе: ${error.message}`);
+        alert(`Ошибка: ${error.message}`);
     }
 });
 
@@ -66,24 +68,20 @@ document.getElementById("profile-form").addEventListener("submit", async (event)
     const portfolio = document.getElementById("profile-portfolio").value;
 
     try {
-        if (!auth.currentUser) {
-            alert("Сначала войдите в систему!");
-            return;
-        }
         await addDoc(collection(db, "profiles"), {
             name: name,
             services: services,
             portfolio: portfolio,
-            userId: auth.currentUser.uid,
+            userId: auth.currentUser?.uid || "Неизвестный пользователь"
         });
         alert("Профиль успешно создан!");
         loadProfiles();
     } catch (error) {
-        alert(`Ошибка при создании профиля: ${error.message}`);
+        alert(`Ошибка: ${error.message}`);
     }
 });
 
-// Загрузка всех профилей
+// Загрузка профилей
 async function loadProfiles() {
     const profilesContainer = document.getElementById("profiles-container");
     profilesContainer.innerHTML = ""; // Очистка контейнера
@@ -108,9 +106,7 @@ async function loadProfiles() {
 // Слушатель изменений состояния авторизации
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        loadProfiles(); // Загружаем профили при входе пользователя
-    } else {
-        console.log("Пользователь вышел из системы или не вошел.");
+        loadProfiles();
     }
 });
 
