@@ -3,65 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Мой сайт фрилансера</title>
+    <meta name="description" content="РЎР°Р№С‚ С„СЂРёР»Р°РЅСЃРµСЂР°, РїСЂРµРґРѕСЃС‚Р°РІР»СЏСЋС‰РµРіРѕ СѓСЃР»СѓРіРё РІ РІРµР±-СЂР°Р·СЂР°Р±РѕС‚РєРµ, РґРёР·Р°Р№РЅРµ Рё РґСЂСѓРіРёС… РѕР±Р»Р°СЃС‚СЏС….">
+    <meta name="keywords" content="С„СЂРёР»Р°РЅСЃРµСЂ, РІРµР±-СЂР°Р·СЂР°Р±РѕС‚РєР°, РґРёР·Р°Р№РЅ, РєРѕРїРёСЂР°Р№С‚РёРЅРі">
+    <meta name="author" content="Р’Р°С€Рµ РёРјСЏ">
+    <title>РњРѕР№ СЃР°Р№С‚ С„СЂРёР»Р°РЅСЃРµСЂР°</title>
+
+    <!-- AOS Library for Scroll Animations -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <div class="container">
-            <h1>Добро пожаловать на мой сайт фрилансера!</h1>
+            <h1>Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РЅР° РјРѕР№ СЃР°Р№С‚ С„СЂРёР»Р°РЅСЃРµСЂР°!</h1>
             <nav>
                 <ul>
-                    <li><a href="#about">Обо мне</a></li>
-                    <li><a href="#services">Услуги</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#about">РћР±Рѕ РјРЅРµ</a></li>
+                    <li><a href="#services">РЈСЃР»СѓРіРё</a></li>
+                    <li><a href="#portfolio">РњРѕРё СЂР°Р±РѕС‚С‹</a></li>
+                    <li><a href="#contact">РљРѕРЅС‚Р°РєС‚С‹</a></li>
+                    <li><a href="#socials">РЎРѕС†РёР°Р»СЊРЅС‹Рµ СЃРµС‚Рё</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="about" class="section">
+    <!-- About Section -->
+    <section id="about" class="section" data-aos="fade-up">
         <div class="container">
-            <h2>Обо мне</h2>
-            <p>Привет! Я фрилансер с опытом работы в различных областях: веб-разработка, графический дизайн, копирайтинг и многое другое.</p>
+            <h2>РћР±Рѕ РјРЅРµ</h2>
+            <p>РџСЂРёРІРµС‚! РЇ С„СЂРёР»Р°РЅСЃРµСЂ СЃ РѕРїС‹С‚РѕРј СЂР°Р±РѕС‚С‹ РІ СЂР°Р·Р»РёС‡РЅС‹С… РѕР±Р»Р°СЃС‚СЏС…: РІРµР±-СЂР°Р·СЂР°Р±РѕС‚РєР°, РіСЂР°С„РёС‡РµСЃРєРёР№ РґРёР·Р°Р№РЅ, РєРѕРїРёСЂР°Р№С‚РёРЅРі Рё РјРЅРѕРіРѕРµ РґСЂСѓРіРѕРµ.</p>
         </div>
     </section>
 
-    <section id="services" class="section">
+    <!-- Services Section -->
+    <section id="services" class="section" data-aos="fade-left">
         <div class="container">
-            <h2>Мои услуги</h2>
+            <h2>РњРѕРё СѓСЃР»СѓРіРё</h2>
             <ul>
-                <li>Веб-разработка</li>
-                <li>Дизайн и верстка</li>
-                <li>SEO-оптимизация</li>
-                <li>Копирайтинг</li>
+                <li>Р’РµР±-СЂР°Р·СЂР°Р±РѕС‚РєР°</li>
+                <li>Р”РёР·Р°Р№РЅ Рё РІРµСЂСЃС‚РєР°</li>
+                <li>SEO-РѕРїС‚РёРјРёР·Р°С†РёСЏ</li>
+                <li>РљРѕРїРёСЂР°Р№С‚РёРЅРі</li>
             </ul>
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section" data-aos="fade-right">
         <div class="container">
-            <h2>Контакты</h2>
+            <h2>РњРѕРё СЂР°Р±РѕС‚С‹</h2>
+            <div class="gallery">
+                <img src="work1.jpg" alt="Р Р°Р±РѕС‚Р° 1">
+                <img src="work2.jpg" alt="Р Р°Р±РѕС‚Р° 2">
+                <img src="work3.jpg" alt="Р Р°Р±РѕС‚Р° 3">
+                <img src="work4.jpg" alt="Р Р°Р±РѕС‚Р° 4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section" data-aos="fade-up">
+        <div class="container">
+            <h2>РљРѕРЅС‚Р°РєС‚С‹</h2>
             <form id="contact-form">
-                <input type="text" id="name" placeholder="Ваше имя" required>
-                <input type="email" id="email" placeholder="Ваш email" required>
-                <textarea id="message" placeholder="Ваше сообщение" required></textarea>
-                <button type="submit">Отправить</button>
+                <input type="text" id="name" placeholder="Р’Р°С€Рµ РёРјСЏ" required>
+                <input type="email" id="email" placeholder="Р’Р°С€ email" required>
+                <textarea id="message" placeholder="Р’Р°С€Рµ СЃРѕРѕР±С‰РµРЅРёРµ" required></textarea>
+                <button type="submit">РћС‚РїСЂР°РІРёС‚СЊ</button>
             </form>
             <p id="form-message"></p>
         </div>
     </section>
 
+    <!-- Socials Section -->
+    <section id="socials" class="section">
+        <div class="container">
+            <h2>РЎРІСЏР¶РёС‚РµСЃСЊ СЃРѕ РјРЅРѕР№:</h2>
+            <a href="https://twitter.com/yourprofile" target="_blank">Twitter</a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+            <a href="https://github.com/yourprofile" target="_blank">GitHub</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Мой сайт фрилансера</p>
+            <p>&copy; 2024 РњРѕР№ СЃР°Р№С‚ С„СЂРёР»Р°РЅСЃРµСЂР°</p>
+            <button id="theme-toggle">РџРµСЂРµРєР»СЋС‡РёС‚СЊ С‚РµРјСѓ</button>
         </div>
     </footer>
 
+    <!-- AOS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <!-- Custom JavaScript -->
     <script src="script.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
+
 
 

@@ -1,14 +1,17 @@
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -20,16 +23,18 @@ header {
     background-color: #333;
     color: white;
     padding: 1rem 0;
+    text-align: center;
 }
 
     header h1 {
-        text-align: center;
+        font-size: 2rem;
     }
 
 nav ul {
     display: flex;
     justify-content: center;
     list-style-type: none;
+    margin-top: 10px;
 }
 
     nav ul li {
@@ -50,26 +55,33 @@ nav ul {
     text-align: center;
 }
 
-#about {
-    background-color: #fff;
+/* Gallery Styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
 
-#services {
-    background-color: #e2e2e2;
-}
+    .gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+    }
 
-#contact {
-    background-color: #fff;
-}
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
 
-form input, form textarea {
+#contact-form input, #contact-form textarea {
     width: 100%;
     padding: 1rem;
     margin: 10px 0;
     border: 1px solid #ccc;
 }
 
-form button {
+#contact-form button {
     padding: 1rem 2rem;
     background-color: #333;
     color: white;
@@ -77,13 +89,44 @@ form button {
     cursor: pointer;
 }
 
-    form button:hover {
+    #contact-form button:hover {
         background-color: #555;
     }
 
+/* Theme switcher styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+    body.dark-mode header {
+        background-color: #222;
+    }
+
+    body.dark-mode footer {
+        background-color: #222;
+    }
+
+    body.dark-mode #contact-form input, body.dark-mode #contact-form textarea {
+        background-color: #333;
+        color: white;
+    }
+
+/* Footer Section */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 1rem 0;
 }
+
+/* Social Links */
+#socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+    #socials a:hover {
+        color: #007bff;
+    }
